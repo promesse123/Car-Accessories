@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+	.product-category {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #fff;
+            margin: 30px auto;
+            width: 80%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-category h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Product Gallery Section */
+        .product-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .product-item {
+            background-color: #e3e3e3;
+            border-radius: 8px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product-item h3 {
+            font-size: 1.5em;
+            margin-top: 15px;
+            color: #333;
+        }
+
+        .product-item p {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation Buttons */
+        .navigation-buttons {
+            margin-top: 30px;
+        }
+
+        #prevBtn, #nextBtn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        #prevBtn:hover, #nextBtn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+        a{
+        	text-decoration: none;
+        	width: 30px;
+        }
+        </style>
+</head>
+<body>
+	 <section class="product-category">
+        <h2>Car Electronics</h2>
+
+        <div class="product-gallery">
+            <div class="product-item" id="product1">
+                <img src="u.jpg" alt="Dash Camera">
+                <h3>Dash Camera</h3>
+                <p>Record your drives with high-definition dash cams for extra security.</p>
+            </div>
+            <div class="product-item" id="product2">
+                <img src="o.jpg" alt="Bluetooth Kit">
+                <h3>Bluetooth Kit</h3>
+                <p>Hands-free calling and music streaming via Bluetooth connectivity.</p>
+            </div>
+            <div class="product-item" id="product3">
+                <img src="p.jpg" alt="GPS Device">
+                <h3>GPS Navigation</h3>
+                <p>Get accurate and reliable navigation for your trips with a GPS device.</p>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+       <h1> <div class="navigation-buttons">
+            <button id="prevBtn">Previous</button>
+           <button id="nextBtn">Next</button><a href="index.html">back</a></h1>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Car Accessories. All rights reserved.</p>
+    </footer>
+
+    <!-- Inline JavaScript -->
+    <script>
+        let currentIndex = 0;
+        const products = document.querySelectorAll('.product-item');
+        const totalProducts = products.length;
+
+        // Show the next product
+        function showNextProduct() {
+            products[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex + 1) % totalProducts; // Loop back to the first product
+            products[currentIndex].style.display = 'block';
+        }
+
+        // Show the previous product
+        function showPrevProduct() {
+            products[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex - 1 + totalProducts) % totalProducts; // Loop back to the last product
+            products[currentIndex].style.display = 'block';
+        }
+
+        // Event listeners for Next/Previous buttons
+        document.getElementById('nextBtn').addEventListener('click', showNextProduct);
+        document.getElementById('prevBtn').addEventListener('click', showPrevProduct);
+
+        // Initially, hide all products except the first one
+        products.forEach((product, index) => {
+            if (index !== 0) {
+                product.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Accessories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Arial:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Logo Section -->
+  <header>
+    <div class="logo">
+      <div class="logo-text">
+        <span class="letter-c">C</span>
+        <span class="letter-a">A</span>
+         <span class="letter-d">R</span>
+
+      </div>
+      <div class="logo-icon">
+        <img src="gt.jpg" alt="Car Freshener 2" class="product-image">
+       
+      </div>
+    </div>
+    <h1>Car Accessories</h1>
+
+    <p>Your One-Stop Shop for Car Enhancements</p>
+  </header>
+
+  <!-- Categories Section -->
+  <main>
+    <section class="categories">
+      <div class="category-card" id="seat-covers">
+        <h2> <a href="caver.html">Seat Covers</a></h2>
+        <p>Protect your car seats with stylish and comfortable covers.</p>
+          
+        
+      
+      </div>
+      <div class="category-card" id="car-fresheners">
+        <h2><a href="fresh.html">Car Fresheners</a></h2>
+        <p>Keep your car smelling fresh with our wide range of air fresheners.</p>
+      </div>
+      <div class="category-card" id="organizers">
+        <h2><a href="organise.html">Organizers</a></h2>
+        <p>Keep your car organized with smart and practical organizers.</p>
+      </div>
+      <div class="category-card" id="electronics">
+        <h2><a href="electronic.html">Electronics</a></h2>
+        <p>Upgrade your car with the latest in automotive electronics.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Car Accessories Store. All rights reserved.</p>
+  </footer>
+
+  <script >
+    const wheels = document.querySelectorAll('.wheel');
+
+wheels.forEach(wheel => {
+  wheel.addEventListener('mouseenter', () => {
+    wheel.style.transform = 'rotate(360deg)';
+    wheel.style.transition = 'transform 1s linear';
+  });
+
+  wheel.addEventListener('mouseleave', () => {
+    wheel.style.transform = 'rotate(0deg)';
+    wheel.style.transition = 'transform 1s linear';
+  });
+});
+
+// Add hover effect for category cards (scale effect)
+document.querySelectorAll('.category-card').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    card.style.transform = 'scale(1.05)';
+    card.style.transition = 'transform 0.2s ease-in-out';
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'scale(1)';
+    card.style.transition = 'transform 0.2s ease-in-out';
+  });
+});
+  </script>
+</body>
+</html>
